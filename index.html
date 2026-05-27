@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fórum Santos Export 2026 — Guarujá, SP. Infraestrutura de transportes, energia e mineração. 28 e 29 de maio.">
+    <title>Santos Export 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1e3348;
+            --navy-deep: #0f1c28;
+            --navy-soft: #2a4560;
+            --gold: #c9a24d;
+            --gold-light: #e4c878;
+            --gold-muted: rgba(201, 162, 77, 0.15);
+            --cream: #f8f6f1;
+            --white: #ffffff;
+            --text: #2c3e50;
+            --text-muted: #6b7c8f;
+            --line: rgba(201, 162, 77, 0.35);
+            --shadow: 0 4px 24px rgba(15, 28, 40, 0.08);
+            --shadow-lg: 0 20px 60px rgba(15, 28, 40, 0.12);
+            --radius: 16px;
+            --transition: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ── Header ── */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(30, 51, 72, 0.08);
+            box-shadow: 0 2px 20px rgba(15, 28, 40, 0.06);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.65rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .header-logo {
+            display: block;
+            height: 52px;
+            width: auto;
+            transition: transform var(--transition);
+        }
+
+        .header-logo:hover { transform: scale(1.02); }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .header-nav a {
+            color: var(--navy);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            transition: all var(--transition);
+        }
+
+        .header-nav a:hover {
+            background: var(--gold-muted);
+            color: var(--navy-deep);
+        }
+
+        .header-nav .nav-cta {
+            background: var(--navy);
+            color: var(--white);
+            margin-left: 0.5rem;
+        }
+
+        .header-nav .nav-cta:hover {
+            background: var(--navy-soft);
+            color: var(--white);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+            color: var(--navy);
+        }
+
+        /* ── Hero ── */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 2rem 2rem;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('assets/images/hero-porto.jpg') center/cover no-repeat;
+            transform: scale(1.05);
+            animation: heroZoom 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes heroZoom {
+            from { transform: scale(1.05); }
+            to { transform: scale(1.12); }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                165deg,
+                rgba(15, 28, 40, 0.92) 0%,
+                rgba(30, 51, 72, 0.78) 45%,
+                rgba(15, 28, 40, 0.88) 100%
+            );
+        }
+
+        .hero-grain {
+            position: absolute;
+            inset: 0;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 720px;
+            animation: fadeUp 1s var(--transition) both;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.8rem, 7vw, 4.5rem);
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 0.04em;
+            line-height: 1.05;
+            margin-bottom: 0.25rem;
+            animation: fadeUp 1s 0.15s var(--transition) both;
+        }
+
+        .hero-title span { color: var(--gold-light); }
+
+        .hero-tagline {
+            font-size: 0.85rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.55);
+            max-width: 520px;
+            margin: 0 auto 1.5rem;
+            font-weight: 300;
+            line-height: 1.6;
+            animation: fadeUp 1s 0.25s var(--transition) both;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.25rem;
+            background: rgba(201, 162, 77, 0.12);
+            border: 1px solid rgba(201, 162, 77, 0.35);
+            border-radius: 100px;
+            color: var(--gold-light);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            animation: fadeUp 1s 0.3s var(--transition) both;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.3); }
+        }
+
+        .hero-date {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: 0.02em;
+            margin-bottom: 0.5rem;
+            animation: fadeUp 1s 0.45s var(--transition) both;
+        }
+
+        .hero-location {
+            color: rgba(255,255,255,0.75);
+            font-size: 1.05rem;
+            font-weight: 300;
+            animation: fadeUp 1s 0.6s var(--transition) both;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 2.5rem;
+            padding: 1rem 2.25rem;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            color: var(--navy-deep);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            border-radius: 100px;
+            box-shadow: 0 8px 32px rgba(201, 162, 77, 0.35);
+            transition: transform var(--transition), box-shadow var(--transition);
+            animation: fadeUp 1s 0.75s var(--transition) both;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(201, 162, 77, 0.45);
+        }
+
+        .hero-cta svg { transition: transform var(--transition); }
+        .hero-cta:hover svg { transform: translateX(4px); }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(8px); }
+        }
+
+        /* ── Info strip ── */
+        .info-strip {
+            background: var(--navy-deep);
+            padding: 0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .info-item {
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-right: 1px solid rgba(255,255,255,0.08);
+            transition: background var(--transition);
+        }
+
+        .info-item:last-child { border-right: none; }
+        .info-item:hover { background: rgba(201, 162, 77, 0.06); }
+
+        .info-icon {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 0.75rem;
+            color: var(--gold);
+        }
+
+        .info-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.45);
+            margin-bottom: 0.35rem;
+        }
+
+        .info-value {
+            color: var(--white);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* ── Brand showcase ── */
+        .brand-showcase {
+            background: var(--white);
+            padding: 3.5rem 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(30, 51, 72, 0.06);
+        }
+
+        .brand-showcase-inner {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .brand-showcase-logo {
+            max-width: min(480px, 90vw);
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .brand-showcase-caption {
+            margin-top: 1.25rem;
+            font-size: 0.78rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* ── Sponsors ── */
+        .sponsors-section {
+            background: var(--white);
+            padding: 5rem 1.5rem;
+            border-top: 1px solid rgba(30, 51, 72, 0.06);
+        }
+
+        .sponsors-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .sponsors-section .section-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .sponsor-banner {
+            background: var(--cream);
+            border-radius: var(--radius);
+            padding: 2rem 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(30, 51, 72, 0.06);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: box-shadow var(--transition);
+        }
+
+        .sponsor-banner:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .sponsor-banner:last-child { margin-bottom: 0; }
+
+        .sponsor-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        /* ── Section ── */
+        .section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 5rem 1.5rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-eyebrow {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.2rem, 4vw, 3rem);
+            font-weight: 600;
+            color: var(--navy);
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+            font-weight: 300;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ── Day tabs ── */
+        .day-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .day-tab {
+            position: relative;
+            padding: 1rem 2rem;
+            background: var(--white);
+            border: 2px solid transparent;
+            border-radius: var(--radius);
+            cursor: pointer;
+            font-family: inherit;
+            transition: all var(--transition);
+            box-shadow: var(--shadow);
+            min-width: 160px;
+        }
+
+        .day-tab:hover {
+            border-color: var(--line);
+            transform: translateY(-2px);
+        }
+
+        .day-tab.active {
+            background: var(--navy);
+            border-color: var(--navy);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .day-tab-num {
+            display: block;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1;
+            transition: color var(--transition);
+        }
+
+        .day-tab.active .day-tab-num { color: var(--gold); }
+
+        .day-tab-label {
+            display: block;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+            transition: color var(--transition);
+        }
+
+        .day-tab.active .day-tab-label { color: rgba(255,255,255,0.6); }
+
+        .day-tab-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 24px;
+            height: 24px;
+            background: var(--gold);
+            color: var(--navy-deep);
+            border-radius: 50%;
+            font-size: 0.7rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ── Timeline ── */
+        .timeline-wrapper {
+            position: relative;
+        }
+
+        .timeline-panel {
+            display: none;
+            animation: panelIn 0.5s var(--transition) both;
+        }
+
+        .timeline-panel.active { display: block; }
+
+        @keyframes panelIn {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .timeline {
+            position: relative;
+            padding: 1rem 0;
+        }
+
+        .timeline-track {
+            position: absolute;
+            left: 28px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--line);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .timeline-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0%;
+            background: linear-gradient(180deg, var(--gold) 0%, var(--gold-light) 100%);
+            border-radius: 2px;
+            transition: height 0.8s var(--transition);
+        }
+
+        .timeline-event {
+            position: relative;
+            padding-left: 72px;
+            margin-bottom: 1.25rem;
+            opacity: 0;
+            transform: translateX(-12px);
+            transition: opacity 0.6s var(--transition), transform 0.6s var(--transition);
+        }
+
+        .timeline-event.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 20px;
+            top: 1.5rem;
+            width: 18px;
+            height: 18px;
+            background: var(--cream);
+            border: 3px solid var(--gold);
+            border-radius: 50%;
+            z-index: 2;
+            transition: all var(--transition);
+        }
+
+        .timeline-event.visible .timeline-dot {
+            box-shadow: 0 0 0 4px var(--gold-muted);
+        }
+
+        .timeline-event:hover .timeline-dot {
+            background: var(--gold);
+            transform: scale(1.15);
+        }
+
+        .timeline-event.break .timeline-dot {
+            border-color: var(--text-muted);
+            width: 12px;
+            height: 12px;
+            left: 23px;
+            top: 1.65rem;
+        }
+
+        .timeline-event.break .timeline-dot { background: var(--text-muted); }
+
+        .event-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 1.5rem 1.75rem;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(30, 51, 72, 0.06);
+            transition: all var(--transition);
+            cursor: default;
+        }
+
+        .timeline-event:hover .event-card {
+            box-shadow: var(--shadow-lg);
+            transform: translateX(4px);
+            border-color: rgba(201, 162, 77, 0.2);
+        }
+
+        .timeline-event.break .event-card {
+            background: transparent;
+            box-shadow: none;
+            border: 1px dashed rgba(107, 124, 143, 0.3);
+            padding: 1rem 1.5rem;
+        }
+
+        .timeline-event.break:hover .event-card {
+            transform: none;
+            box-shadow: none;
+        }
+
+        .event-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .event-time {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--navy);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .event-type {
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 600;
+            padding: 0.25rem 0.65rem;
+            border-radius: 100px;
+        }
+
+        .type-keynote { background: rgba(30, 51, 72, 0.1); color: var(--navy); }
+        .type-panel { background: var(--gold-muted); color: #8a6d2b; }
+        .type-break { background: rgba(107, 124, 143, 0.12); color: var(--text-muted); }
+        .type-ceremony { background: rgba(201, 162, 77, 0.25); color: var(--navy); }
+        .type-presentation { background: rgba(42, 69, 96, 0.1); color: var(--navy-soft); }
+
+        .event-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--navy);
+            line-height: 1.45;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-theme {
+            font-size: 0.9rem;
+            color: var(--gold);
+            font-weight: 500;
+            font-style: italic;
+            margin-bottom: 0.75rem;
+        }
+
+        .event-details {
+            list-style: none;
+            margin: 0.75rem 0 0;
+            padding: 0;
+        }
+
+        .event-details li {
+            position: relative;
+            padding-left: 1.1rem;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 0.35rem;
+            line-height: 1.5;
+        }
+
+        .event-details li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.55em;
+            width: 5px;
+            height: 5px;
+            background: var(--gold);
+            border-radius: 50%;
+            opacity: 0.6;
+        }
+
+        .event-moderation {
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(30, 51, 72, 0.08);
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        .event-moderation strong { color: var(--navy-soft); font-weight: 500; }
+
+        /* ── CTA section ── */
+        .cta-section {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+            padding: 5rem 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(201, 162, 77, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .cta-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--white);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .cta-text {
+            color: rgba(255,255,255,0.65);
+            max-width: 480px;
+            margin: 0 auto 2rem;
+            font-weight: 300;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.1rem 2.5rem;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            color: var(--navy-deep);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            border-radius: 100px;
+            box-shadow: 0 8px 32px rgba(201, 162, 77, 0.3);
+            transition: all var(--transition);
+            position: relative;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 16px 48px rgba(201, 162, 77, 0.4);
+        }
+
+        /* ── Footer ── */
+        footer {
+            background: var(--navy-deep);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        footer p {
+            color: rgba(255,255,255,0.4);
+            font-size: 0.82rem;
+        }
+
+        footer strong { color: var(--gold); font-weight: 500; }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .header-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background: var(--white);
+                padding: 1rem;
+                border-bottom: 1px solid rgba(30, 51, 72, 0.08);
+                box-shadow: var(--shadow);
+            }
+
+            .header-nav.open { display: flex; }
+
+            .header-nav a { width: 100%; text-align: center; }
+
+            .header-nav .nav-cta { margin-left: 0; }
+
+            .nav-toggle { display: block; }
+
+            .header-logo { height: 42px; }
+
+            .info-grid { grid-template-columns: 1fr; }
+            .info-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+            .info-item:last-child { border-bottom: none; }
+            .timeline-track { left: 20px; }
+            .timeline-dot { left: 12px; }
+            .timeline-event.break .timeline-dot { left: 15px; }
+            .timeline-event { padding-left: 56px; }
+            .day-tab { min-width: 140px; padding: 0.85rem 1.25rem; }
+            .sponsor-banner { padding: 1.25rem 0.75rem; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="#" aria-label="Santos Export — início">
+                <img src="assets/images/logo-santos-export.png" alt="Santos Export" class="header-logo">
+            </a>
+            <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+            <nav class="header-nav">
+                <a href="#programacao">Programação</a>
+                <a href="#patrocinadores">Patrocinadores</a>
+                <a href="https://santosexport.inscreva.online/" class="nav-cta" target="_blank" rel="noopener">Inscreva-se</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-grain" aria-hidden="true"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge">Fórum Regional 2026</div>
+            <h1 class="hero-title">SANTOS <span>EXPORT</span></h1>
+            <p class="hero-tagline">Infraestrutura de Transportes, Energia e Mineração</p>
+            <p class="hero-date">28 e 29 de Maio</p>
+            <p class="hero-location">Guarujá, SP · Casa Grande Hotel Resort &amp; Spa</p>
+            <a href="#programacao" class="hero-cta">
+                Ver Programação
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+        <span class="scroll-hint">Role para explorar</span>
+    </section>
+
+    <!-- Logo em destaque -->
+    <section class="brand-showcase" aria-label="Identidade visual do evento">
+        <div class="brand-showcase-inner">
+            <img src="assets/images/logo-santos-export.png" alt="Santos Export — Fórum Regional de Infraestrutura de Transportes, Energia e Mineração" class="brand-showcase-logo">
+            <p class="brand-showcase-caption">Fórum Regional de Infraestrutura · 2026</p>
+        </div>
+    </section>
+
+    <!-- Info strip -->
+    <div class="info-strip">
+        <div class="info-grid">
+            <div class="info-item">
+                <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                <div class="info-label">Datas</div>
+                <div class="info-value">28 e 29 de Maio de 2026</div>
+            </div>
+            <div class="info-item">
+                <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <div class="info-label">Local</div>
+                <div class="info-value">Casa Grande Hotel Resort &amp; Spa</div>
+            </div>
+            <div class="info-item">
+                <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                <div class="info-label">Transmissão</div>
+                <div class="info-value">Ao vivo pela TV BE News</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Programação -->
+    <section class="section" id="programacao">
+        <div class="section-header">
+            <p class="section-eyebrow">Agenda completa</p>
+            <h2 class="section-title">Programação do Evento</h2>
+            <p class="section-subtitle">Dois dias de debates sobre infraestrutura portuária, logística, energia e sustentabilidade</p>
+        </div>
+
+        <div class="day-tabs" role="tablist">
+            <button class="day-tab active" role="tab" aria-selected="true" data-day="day1">
+                <span class="day-tab-count">15</span>
+                <span class="day-tab-num">28</span>
+                <span class="day-tab-label">Maio · Quinta</span>
+            </button>
+            <button class="day-tab" role="tab" aria-selected="false" data-day="day2">
+                <span class="day-tab-count">7</span>
+                <span class="day-tab-num">29</span>
+                <span class="day-tab-label">Maio · Sexta</span>
+            </button>
+        </div>
+
+        <div class="timeline-wrapper">
+            <!-- Dia 28 -->
+            <div class="timeline-panel active" id="day1" role="tabpanel">
+                <div class="timeline">
+                    <div class="timeline-track"><div class="timeline-progress"></div></div>
+
+                    <div class="timeline-event" data-type="default">
+                        <div class="timeline-dot"></div>
+                        <div class="event-card">
+                            <div class="event-meta">
+                                <span class="event-time">08h30</span>
+                            </div>
+                            <h3 class="event-title">Credenciamento</h3>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event" data-type="ceremony">
+                        <div class="timeline-dot"></div>
+                        <div class="event-card">
+                            <div class="event-meta">
+                                <span class="event-time">09h00</span>
+                                <span class="event-type type-ceremony">Abertura</span>
+                            </div>
+                            <h3 class="event-title">Palavras de boas-vindas — José Roberto Campos</h3>
+                            <ul class="event-details">
+                                <li>Posse da nova presidente do Conselho ESG: Béatrice Dupuy</li>
+                                <li>Posse dos novos integrantes do Conselho Nacional do Brasil Export</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event" data-type="ceremony">
+                        <div class="timeline-dot"></div>
+                        <div class="event-card">
+                            <div class="event-meta">
+                                <span class="event-time">09h15</span>
+                                <span class="event-type type-ceremony">Abertura</span>
+                            </div>
+                            <h3 class="event-title">Palavras de abertura — Ricardo Molitzas</h3>
+                            <p class="event-details" style="margin:0;padding:0;font-size:0.88rem;color:var(--text-muted)">Posse dos novos integrantes do Conselho do Santos Export</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event" data-type="keynote">
+                        <div class="timeline-dot"></div>
+                        <div class="event-card">
+                            <div class="event-meta">
+                                <span class="event-time">09h30</span>
+                                <span class="event-type type-keynote">Palestra</span>
+                            </div>
+                            <h3 class="event-title">Palestra especial — José Eduardo Cardozo</h3>
+                            <p class="event-theme">Tecon Santos 10 | Segurança jurídica para expansão da infraestrutura portuária</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event" data-type="panel">
+                        <div class="timeline-dot"></div>
+                        <div class="event-card">
+                            <div class="event-meta">
+                                <span class="event-time">09h45</span>
+                                <span class="event-type type-panel">Painel</span>
+                            </div>
+                            <h3 class="event-title">O futuro do maior complexo portuário da América Latina</h3>
+                            <ul class="event-details">
+                                <li>Concessão de terminais e acesso rodoferroviário</li>
+                                <li>Atração de capital e estabilidade</li>
+                                <li>Sinergia de políticas públicas</li>
+                                <li>Impactos da geopolítica</li>
+                            </ul>
+                            <p class="event-moderation"><strong>Moderação:</strong> Leopoldo Figueiredo</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event break" data-type="break">
+                        <div class="timeline-dot"></div>
+                        <div class="event-card">
+                            <div class="event-meta">
+                                <span class="event-time">11h00</span>
+                                <span class="event-type type-break">Intervalo</span>
+                            </div>
+                            <h3 class="event-title">Intervalo</h3>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event" data-type="panel">
+                        <div class="timeline-dot"></div>
+                        <div class="event-card">
+                            <div class="event-meta">
+                                <span class="event-time">11h30</span>
+                                <span class="event-type type-panel">Painel</span>
+                            </div>
+                            <h3 class="event-title">Estratégias de logística e armazenagem</h3>
+                            <p class="event-moderation"><strong>Moderação:</strong> Ricardo Molitzas</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event break" data-type="break">
+                        <div class="timeline-dot"></div>
+                        <div class="event-card">
+                            <div class="event-meta">
+                                <span class="event-time">12h30</span>
+                                <span class="event-type type-break">Encerramento</span>
+                            </div>
+                            <h3 class="event-title">Encerramento da manhã</h3>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event" data-type="panel">
+                        <div class="timeline-dot"></div>
+                        <div class="event-card">
+                            <div class="event-meta">
+                                <span class="event-time">14h15</span>
+                                <span class="event-type type-panel">Painel</span>
+                            </div>
+                            <h3 class="event-title">Diversidade e inclusão no setor de infraestrutura</h3>
+                            <p class="event-moderation"><strong>Moderação:</strong> Núria Bianco</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event" data-type="panel">
+                        <div class="timeline-dot"></div>
+                        <div class="event-card">
+                            <div class="event-meta">
+                                <span class="event-time">15h15</span>
+                                <span class="event-type type-panel">Painel</span>
+                            </div>
+                            <h3 class="event-title">Porto de Santos protagonista</h3>
+                            <p class="event-moderation"><strong>Moderação:</strong> Núria Bianco e Milena Castro</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event" data-type="presentation">
+                        <div class="timeline-dot"></div>
+                        <div class="event-card">
+                            <div class="event-meta">
+                                <span class="event-time">16h00</span>
+                                <span class="event-type type-presentation">Apresentação</span>
+                            </div>
+                            <h3 class="event-title">Fernanda Presídio — Lumini IT</h3>
+                            <p class="event-theme">Ressignificando a tecnologia</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event break" data-type="break">
+                        <div class="timeline-dot"></div>
+                        <div class="event-card">
+                            <div class="event-meta">
+                                <span class="event-time">16h30</span>
+                                <span class="event-type type-break">Intervalo</span>
+                            </div>
+                            <h3 class="event-title">Intervalo</h3>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event" data-type="panel">
+                        <div class="timeline-dot"></div>
+                        <div class="event-card">
+                            <div class="event-meta">
+                                <span class="event-time">17h00</span>
+                                <span class="event-type type-panel">Painel InfraJur</span>
+                            </div>
+                            <h3 class="event-title">Estabilidade regulatória e segurança jurídica</h3>
+                            <p class="event-moderation"><strong>Apresentação:</strong> Breno Medeiros · <strong>Moderação:</strong> Celso Peel</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event" data-type="panel">
+                        <div class="timeline-dot"></div>
+                        <div class="event-card">
+                            <div class="event-meta">
+                                <span class="event-time">18h15</span>
+                                <span class="event-type type-panel">Painel IBL/Frenlogi</span>
+                            </div>
+                            <h3 class="event-title">Modernização da Lei dos Portos</h3>
+                            <p class="event-moderation"><strong>Moderação:</strong> Rebeca Albuquerque</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event" data-type="ceremony">
+                        <div class="timeline-dot"></div>
+                        <div class="event-card">
+                            <div class="event-meta">
+                                <span class="event-time">19h00</span>
+                                <span class="event-type type-ceremony">Solenidade</span>
+                            </div>
+                            <h3 class="event-title">Sessão Solene com autoridades</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dia 29 -->
+            <div class="timeline-panel" id="day2" role="tabpanel">
+                <div class="timeline">
+                    <div class="timeline-track"><div class="timeline-progress"></div></div>
+
+                    <div class="timeline-event" data-type="default">
+                        <div class="timeline-dot"></div>
+                        <div class="event-card">
+                            <div class="event-meta">
+                                <span class="event-time">08h30</span>
+                            </div>
+                            <h3 class="event-title">Credenciamento e boas-vindas</h3>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event" data-type="keynote">
+                        <div class="timeline-dot"></div>
+                        <div class="event-card">
+                            <div class="event-meta">
+                                <span class="event-time">09h00</span>
+                                <span class="event-type type-keynote">Palestra InfraESG</span>
+                            </div>
+                            <h3 class="event-title">Felipe Queiroz — ANTT</h3>
+                            <p class="event-theme">Descarbonização no setor de transporte terrestres</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event" data-type="panel">
+                        <div class="timeline-dot"></div>
+                        <div class="event-card">
+                            <div class="event-meta">
+                                <span class="event-time">09h30</span>
+                                <span class="event-type type-panel">Painel</span>
+                            </div>
+                            <h3 class="event-title">Transição energética</h3>
+                            <p class="event-moderation"><strong>Moderação:</strong> Béatrice Dupuy</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event break" data-type="break">
+                        <div class="timeline-dot"></div>
+                        <div class="event-card">
+                            <div class="event-meta">
+                                <span class="event-time">10h15</span>
+                                <span class="event-type type-break">Intervalo</span>
+                            </div>
+                            <h3 class="event-title">Intervalo</h3>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event" data-type="presentation">
+                        <div class="timeline-dot"></div>
+                        <div class="event-card">
+                            <div class="event-meta">
+                                <span class="event-time">10h30</span>
+                                <span class="event-type type-presentation">Estudo</span>
+                            </div>
+                            <h3 class="event-title">Estudo Santos 10+</h3>
+                            <p class="event-moderation"><strong>Moderação:</strong> Ricardo Molitzas</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event" data-type="panel">
+                        <div class="timeline-dot"></div>
+                        <div class="event-card">
+                            <div class="event-meta">
+                                <span class="event-time">11h30</span>
+                                <span class="event-type type-panel">Painel</span>
+                            </div>
+                            <h3 class="event-title">Demandas do setor produtivo</h3>
+                            <p class="event-moderation"><strong>Moderação:</strong> Regis Prunzel</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event" data-type="ceremony">
+                        <div class="timeline-dot"></div>
+                        <div class="event-card">
+                            <div class="event-meta">
+                                <span class="event-time">12h20</span>
+                                <span class="event-type type-ceremony">Encerramento</span>
+                            </div>
+                            <h3 class="event-title">Solenidade de encerramento</h3>
+                            <p class="event-moderation">Com presença confirmada do ministro de Portos e Aeroportos, <strong>Tomé Franca</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patrocinadores -->
+    <section class="sponsors-section" id="patrocinadores">
+        <div class="sponsors-inner">
+            <div class="section-header">
+                <p class="section-eyebrow">Parceiros do evento</p>
+                <h2 class="section-title">Patrocinadores e Apoiadores</h2>
+                <p class="section-subtitle">Empresas e instituições que tornam o Santos Export 2026 possível</p>
+            </div>
+
+            <div class="sponsor-banner">
+                <img src="assets/images/patrocinadores-principal.jpg" alt="Patrocinadores, realização, apoio institucional, produção e mídia oficial do Santos Export 2026" loading="lazy">
+            </div>
+
+            <div class="sponsor-banner">
+                <img src="assets/images/patrocinadores-secundario.jpg" alt="Patrocinadores adicionais e apoiadores do Santos Export 2026" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2 class="cta-title">Garanta sua participação</h2>
+        <p class="cta-text">Participe do principal fórum de infraestrutura portuária e logística da América Latina.</p>
+        <a href="https://santosexport.inscreva.online/" class="cta-btn" target="_blank" rel="noopener">
+            Inscreva-se Agora
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+    </section>
+
+    <footer>
+        <p><strong>Santos Export 2026</strong> · Fórum Regional de Infraestrutura de Transportes, Energia e Mineração</p>
+    </footer>
+
+    <script>
+        (function () {
+            const toggle = document.querySelector('.nav-toggle');
+            const nav = document.querySelector('.header-nav');
+
+            if (toggle && nav) {
+                toggle.addEventListener('click', () => {
+                    const open = nav.classList.toggle('open');
+                    toggle.setAttribute('aria-expanded', open);
+                });
+
+                nav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        nav.classList.remove('open');
+                        toggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+
+            const tabs = document.querySelectorAll('.day-tab');
+            const panels = document.querySelectorAll('.timeline-panel');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const target = tab.dataset.day;
+
+                    tabs.forEach(t => {
+                        t.classList.remove('active');
+                        t.setAttribute('aria-selected', 'false');
+                    });
+                    tab.classList.add('active');
+                    tab.setAttribute('aria-selected', 'true');
+
+                    panels.forEach(p => {
+                        p.classList.remove('active');
+                        p.querySelectorAll('.timeline-event').forEach(e => e.classList.remove('visible'));
+                    });
+
+                    const panel = document.getElementById(target);
+                    panel.classList.add('active');
+                    initTimeline(panel);
+                });
+            });
+
+            function initTimeline(panel) {
+                const events = panel.querySelectorAll('.timeline-event');
+                const progress = panel.querySelector('.timeline-progress');
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            updateProgress(panel);
+                        }
+                    });
+                }, { threshold: 0.2, rootMargin: '0px 0px -10% 0px' });
+
+                events.forEach((event, i) => {
+                    event.style.transitionDelay = `${i * 0.05}s`;
+                    observer.observe(event);
+                });
+
+                function updateProgress(p) {
+                    const all = p.querySelectorAll('.timeline-event');
+                    const visible = p.querySelectorAll('.timeline-event.visible');
+                    if (all.length && progress) {
+                        const pct = (visible.length / all.length) * 100;
+                        progress.style.height = pct + '%';
+                    }
+                }
+
+                updateProgress(panel);
+            }
+
+            initTimeline(document.getElementById('day1'));
+        })();
+    </script>
+</body>
+</html>
