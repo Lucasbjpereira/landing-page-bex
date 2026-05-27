@@ -534,6 +534,25 @@
             padding: 1rem 0;
         }
 
+        /* Patrocinadores embutidos na agenda (após um bloco específico) */
+        .timeline-inline-sponsor {
+            margin: 0.35rem 0 1.5rem 72px;
+        }
+
+        .timeline-inline-sponsor .sponsor-banner {
+            margin-bottom: 0;
+            padding: 1.25rem 1rem;
+        }
+
+        .timeline-inline-sponsor .sponsor-caption {
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 0.65rem;
+        }
+
         .timeline-track {
             position: absolute;
             left: 28px;
@@ -818,6 +837,7 @@
             .timeline-dot { left: 12px; }
             .timeline-event.break .timeline-dot { left: 15px; }
             .timeline-event { padding-left: 56px; }
+            .timeline-inline-sponsor { margin-left: 56px; }
             .day-tab { min-width: 140px; padding: 0.85rem 1.25rem; }
             .sponsor-banner { padding: 1.25rem 0.75rem; }
         }
@@ -897,6 +917,21 @@
             </div>
         </div>
     </div>
+
+    <!-- Patrocinadores (faixa principal) -->
+    <section class="sponsors-section" id="patrocinadores">
+        <div class="sponsors-inner">
+            <div class="section-header">
+                <p class="section-eyebrow">Parceiros do evento</p>
+                <h2 class="section-title">Patrocinadores e Apoiadores</h2>
+                <p class="section-subtitle">Empresas e instituições que tornam o Santos Export 2026 possível</p>
+            </div>
+
+            <div class="sponsor-banner">
+                <img src="assets/images/patrocinadores-principal.jpg" alt="Patrocinadores, realização, apoio institucional, produção e mídia oficial do Santos Export 2026" loading="lazy">
+            </div>
+        </div>
+    </section>
 
     <!-- Programação -->
     <section class="section" id="programacao">
@@ -1080,8 +1115,15 @@
                                 <span class="event-time">17h00</span>
                                 <span class="event-type type-panel">Painel InfraJur</span>
                             </div>
-                            <h3 class="event-title">Estabilidade regulatória e segurança jurídica</h3>
+                            <h3 class="event-title">Estabilidade regulatória e segurança jurídica no setor de infraestrutura de transportes</h3>
                             <p class="event-moderation"><strong>Apresentação:</strong> Breno Medeiros · <strong>Moderação:</strong> Celso Peel</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-inline-sponsor" id="patrocinadores-demais" aria-label="Demais patrocinadores e apoiadores">
+                        <p class="sponsor-caption">Demais patrocinadores</p>
+                        <div class="sponsor-banner">
+                            <img src="assets/images/patrocinadores-secundario.jpg" alt="Patrocinadores adicionais e apoiadores do Santos Export 2026" loading="lazy">
                         </div>
                     </div>
 
@@ -1196,25 +1238,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Patrocinadores -->
-    <section class="sponsors-section" id="patrocinadores">
-        <div class="sponsors-inner">
-            <div class="section-header">
-                <p class="section-eyebrow">Parceiros do evento</p>
-                <h2 class="section-title">Patrocinadores e Apoiadores</h2>
-                <p class="section-subtitle">Empresas e instituições que tornam o Santos Export 2026 possível</p>
-            </div>
-
-            <div class="sponsor-banner">
-                <img src="assets/images/patrocinadores-principal.jpg" alt="Patrocinadores, realização, apoio institucional, produção e mídia oficial do Santos Export 2026" loading="lazy">
-            </div>
-
-            <div class="sponsor-banner">
-                <img src="assets/images/patrocinadores-secundario.jpg" alt="Patrocinadores adicionais e apoiadores do Santos Export 2026" loading="lazy">
             </div>
         </div>
     </section>
